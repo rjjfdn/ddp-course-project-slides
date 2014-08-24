@@ -1,0 +1,56 @@
+---
+title       : Multivariate Linear Models for mtcars Dataset
+subtitle    : Developing Data Products - Course Project
+author      : Reinald Kim T. Amplayo
+job         : Coursera Student
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Product Inspiration
+
+- Course Project of Regression Models class
+- Makes use of the mtcars dataset
+- You create a linear model that has the transmission (am) variable as a predictor and the mpg variable as an outcome
+- You interpret the variables correctly and quantify the difference between the two types of transmission in terms of their mpg
+- This product helps you answer that course project!
+
+---
+
+## About the mtcars Dataset
+
+- Motor Trend Car Road Tests
+- The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).
+
+```{r echo=FALSE, cache=TRUE}
+str(mtcars)
+```
+
+---
+
+## How to Use the Product
+
+1. Choose a combination of features/variables by checking boxes
+2. Look at the output, especially the R^2 and the P-values of each variables
+3. To check if a feature is helpful, make a plot by choosing a feature and plot it with mpg
+4. Go back to 1. until you are satisfied!  
+
+- Very easy! Right?
+
+---
+
+## Next Version Announcements
+
+- We will include multiple datasets, not just mtcars!
+- We will include interactions between features! For example, this will be supported, which makes better regression models:
+
+```{r echo=FALSE, cache=TRUE}
+summary(lm(mpg ~ hp + am + qsec + qsec:hp + am:wt, mtcars))$coefficients
+summary(lm(mpg ~ hp + am + qsec + qsec:hp + am:wt, mtcars))$r.squared
+```
+
+- Thank you!
